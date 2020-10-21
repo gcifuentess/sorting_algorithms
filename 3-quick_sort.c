@@ -2,7 +2,7 @@
 
 
 void quicksort(int *array, size_t size, int lo, int hi);
-size_t partition(int *array, size_t size, int lo, int hi);
+int partition(int *array, size_t size, int lo, int hi);
 void swap(int *a, int *b, int *array, size_t size);
 
 /**
@@ -55,7 +55,7 @@ void quicksort(int *array, size_t size, int lo, int hi)
  *
  * Return: int index where the partition occurs
  */
-size_t partition(int *array, size_t size, int lo, int hi)
+int partition(int *array, size_t size, int lo, int hi)
 {
 	int pivot, i, j;
 
