@@ -1,8 +1,8 @@
 #include "sort.h"
 
 
-void quicksort(int *array, size_t size, size_t lo, size_t hi);
-size_t partition(int *array, size_t size, size_t lo, size_t hi);
+void quicksort(int *array, size_t size, int lo, int hi);
+size_t partition(int *array, size_t size, int lo, int hi);
 void swap(int *a, int *b, int *array, size_t size);
 
 /**
@@ -16,7 +16,7 @@ void swap(int *a, int *b, int *array, size_t size);
 void quick_sort(int *array, size_t size)
 {
 
-	if (!array || !size)
+	if (!array || size < 2)
 		return;
 
 	quicksort(array, size, 0, size - 1);
@@ -32,17 +32,17 @@ void quick_sort(int *array, size_t size)
  *
  * Return: Void
  */
-void quicksort(int *array, size_t size, size_t lo, size_t hi)
+void quicksort(int *array, size_t size, int lo, int hi)
 {
-	size_t p;
+	int p;
 
 	if (lo < hi)
 	{
 		p = partition(array, size, lo, hi);
-		if (p > 0)
-			quicksort(array, size, lo, p - 1);
-		if (p < size - 1)
-			quicksort(array, size, p + 1, hi);
+		/*if (p > 0)*/
+		quicksort(array, size, lo, p - 1);
+		/*if (p < size - 1)*/
+		quicksort(array, size, p + 1, hi);
 	}
 }
 
@@ -55,10 +55,9 @@ void quicksort(int *array, size_t size, size_t lo, size_t hi)
  *
  * Return: int index where the partition occurs
  */
-size_t partition(int *array, size_t size, size_t lo, size_t hi)
+size_t partition(int *array, size_t size, int lo, int hi)
 {
-	int pivot;
-	size_t i, j;
+	int pivot, i, j;
 
 	pivot = array[hi];
 	i = lo;
