@@ -1,5 +1,5 @@
 #include "sort.h"
-#include <stdio.h>
+
 
 void quicksort(int *array, size_t size, size_t lo, size_t hi);
 size_t partition(int *array, size_t size, size_t lo, size_t hi);
