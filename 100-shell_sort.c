@@ -90,7 +90,7 @@ void insertion_sort_array(int *array, size_t size)
 		{
 			pivot = array + i;
 			swap(pivot, pivot + 1);
-			for (j = i; j > 0 + 1; j--)
+			for (j = i; j > 0; j--)
 			{
 				actual = array[j];
 				next = array[j - 1];
