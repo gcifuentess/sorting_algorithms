@@ -16,7 +16,7 @@ void swap(int *a, int *b, int *array, size_t size);
 void quick_sort(int *array, size_t size)
 {
 
-	if (!array || size < 2)
+	if (!array || !size)
 		return;
 
 	quicksort(array, size, 0, size - 1);
@@ -41,8 +41,8 @@ void quicksort(int *array, size_t size, size_t lo, size_t hi)
 		p = partition(array, size, lo, hi);
 		if (p > 0)
 			quicksort(array, size, lo, p - 1);
-		/*if (p < size - 1)*/
-		quicksort(array, size, p + 1, hi);
+		if (p < size - 1)
+			quicksort(array, size, p + 1, hi);
 	}
 }
 
@@ -71,7 +71,7 @@ size_t partition(int *array, size_t size, size_t lo, size_t hi)
 			i++;
 		}
 	}
-	if (i != hi)
+	/*if (i != hi)*/
 		swap(array + i, array + hi, array, size);
 
 	return (i);
@@ -93,5 +93,6 @@ void swap(int *a, int *b, int *array, size_t size)
 	c = *a;
 	*a = *b;
 	*b = c;
+
 	print_array((const int *)array, size);
 }
