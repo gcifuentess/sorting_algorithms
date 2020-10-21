@@ -71,7 +71,7 @@ size_t partition(int *array, size_t size, size_t lo, size_t hi)
 			i++;
 		}
 	}
-	/*if (i != hi)*/
+	if (i != hi)
 		swap(array + i, array + hi, array, size);
 
 	return (i);
