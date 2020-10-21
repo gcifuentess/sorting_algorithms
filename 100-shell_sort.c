@@ -18,10 +18,8 @@ void shell_sort(int *array, size_t size)
 
 	if (!array || size < 0)
 		return;
-
 	len = (int)size;
 	gap = knuth_sequence(len);
-
 	while (gap > 1)
 	{
 		module = len % gap;
