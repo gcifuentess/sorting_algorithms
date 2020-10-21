@@ -93,5 +93,5 @@ void swap(int *a, int *b, int *array, size_t size)
 	c = *a;
 	*a = *b;
 	*b = c;
-	print_array(array, size);
+	print_array((const int *)array, size);
 }
