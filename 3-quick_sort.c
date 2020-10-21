@@ -41,8 +41,8 @@ void quicksort(int *array, size_t size, size_t lo, size_t hi)
 		p = partition(array, size, lo, hi);
 		if (p > 0)
 			quicksort(array, size, lo, p - 1);
-		if (p < size - 1)
-			quicksort(array, size, p + 1, hi);
+		/*if (p < size - 1)*/
+		quicksort(array, size, p + 1, hi);
 	}
 }
 
