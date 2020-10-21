@@ -16,7 +16,7 @@ void shell_sort(int *array, size_t size)
 {
 	int gap, len, module, sub_len, curr, next, i, j;
 
-	if (!array || size < 0)
+	if (!array || size < 2)
 		return;
 	len = (int)size;
 	gap = knuth_sequence(len);
