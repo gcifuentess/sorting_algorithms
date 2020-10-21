@@ -15,6 +15,9 @@ void swap(int *a, int *b, int *array, size_t size);
  */
 void quick_sort(int *array, size_t size)
 {
+	if (!array || size < 2)
+		return;
+
 	quicksort(array, size, 0, size - 1);
 }
 
@@ -60,13 +63,11 @@ int partition(int *array, size_t size, int lo, int hi)
 	{
 		if (array[j] < pivot)
 		{
-			if (i != j)
-				swap(array + i, array + j, array, size);
+			swap(array + i, array + j, array, size);
 			i++;
 		}
 	}
-	if (i != hi)
-		swap(array + i, array + hi, array, size);
+	swap(array + i, array + hi, array, size);
 
 	return (i);
 }
@@ -84,9 +85,11 @@ void swap(int *a, int *b, int *array, size_t size)
 {
 	int c;
 
-	c = *a;
-	*a = *b;
-	*b = c;
-
-	print_array((const int *)array, size);
+	if (*b != *a)
+	{
+		c = *a;
+		*a = *b;
+		*b = c;
+		print_array((const int *)array, size);
+	}
 }
