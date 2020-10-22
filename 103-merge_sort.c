@@ -26,6 +26,8 @@ void merge_sort(int *array, size_t size)
 
 	clone_array(array, arr_b, size);
 	split_merge(arr_b, array, 0, size);
+
+	free(arr_b);
 }
 
 /**
