@@ -82,7 +82,7 @@ void split_merge(int *array_b, int *array_a, int min, int max)
  *            Left source half is  array_a[min : mid-1]
  *            Right source half is array_a[mid : max-1]
  *            Result is            array_b[min : max-1]
-
+ *
  * Return: Void
  */
 void top_down_merge(int *array_a, int *array_b, int min, int mid, int max)
